@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Twenty the first prime numbers</title>
+</head>
+<body>
+<script>
+    let input=prompt("Ban can hien thi bao nhieu so nguyen to N= ");
+
+        function checkPrime(N){
+            if(N<2)
+                return false;
+            if(N>=2)
+                for(let i=2;i<N;i++)
+                {
+                    if(N%i ==0)
+                        return false;
+                }
+            return true;
+        }
+
+    function list_PrimeNumber(N)
+    {
+        let display="<body style='width: 500px; margin: 0 auto; text-align: center;border: 1px solid black; position:relative'>";
+        display=display+"<p style='font-size: 30px;text-transform: uppercase'>hien thi danh sach cac so nguyen to:</p>"
+        display=display+"<table  cellspacing='0' cellpadding='10' border='1' position='absolute' left='50%' right='50%'>";
+        display=display+"<tr>";
+        let number=2;
+        let count=0;
+
+        while(count<N)
+        {
+
+            if(checkPrime(number)) {
+                display=display+ "<td>";
+                display=display+number +"</td>";
+                    count++;
+            }
+
+            number++;
+            if(count%5 ==0) {
+                display = display + "</tr>";
+                display = display + "<tr>"
+            }
+
+        }
+        display=display+"</table>"+"</body>";
+        document.write(display);
+    }
+    list_PrimeNumber(input);
+    </script>
+    </body>
+    </html>
