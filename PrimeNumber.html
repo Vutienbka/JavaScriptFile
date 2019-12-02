@@ -19,31 +19,24 @@
                 }
             return true;
         }
-
-    function list_PrimeNumber(N)
-    {
-        let display="<body style='width: 500px; margin: 0 auto; text-align: center;border: 1px solid black; position:relative'>";
+    function list_PrimeNumber(N) {
+        let display="<body style='width: 700px; margin: 0 auto; text-align: center;border: 1px solid black;'>";
         display=display+"<p style='font-size: 30px;text-transform: uppercase'>hien thi danh sach cac so nguyen to:</p>"
-        display=display+"<table  cellspacing='0' cellpadding='10' border='1' position='absolute' left='50%' right='50%'>";
-        display=display+"<tr>";
+        display=display+"<table  display='inline-blocK' cellpadding='15' cellspacing='0' border='1px solid black' left='50%' right='50%' font-size='15'>";
+        display=display+"<tr border-collapse='collapse'>";
         let number=2;
         let count=0;
-
-        while(count<N)
-        {
-
+        while(count<N) {
             if(checkPrime(number)) {
-                display=display+ "<td>";
+                display=display+ "<td border-collapse='collapse'>";
                 display=display+number +"</td>";
                     count++;
             }
-
             number++;
-            if(count%5 ==0) {
+            if(count%10 ==0) {
                 display = display + "</tr>";
-                display = display + "<tr>"
+                display = display + "<tr border-collapse='collapse'>"
             }
-
         }
         display=display+"</table>"+"</body>";
         document.write(display);
