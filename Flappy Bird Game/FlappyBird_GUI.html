@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body{
+            width: 1000px;
+            height: 1000px;
+            margin: 0 auto;
+            margin-top: 150px;
+        }
+        canvas{
+            position: relative;
+            left: 356px;
+            margin: 0 auto;
+        }
+        #startpausegame{
+            position: relative;
+            background: darkorange;
+            top: 45px;
+            padding:0px;
+            margin: 0px;
+            width: 120px;
+            height: 40px;
+            right: 138px;
+            font-size: 17px;
+            border-radius: 5px;
+        }
+        #replayGame{
+            position: relative;
+            background: darkorange;
+            top: 56px;
+            padding:0px;
+            margin: 0px;
+            width: 116px;
+            height: 35px;
+            left: 448px;
+            text-align: center;
+            font-size: 17px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        pre{
+            position: relative;
+            top: 99px;
+            text-align: center;
+            font-size: 17px;
+        }
+    </style>
+    <title>Flappy Bird Game</title>
+</head>
+<body>
+<script  src="background.js"></script>
+<script  src="pipe.js"></script>
+<script  src="base.js"></script>
+<script  src="bird.js"></script>
+<script  src="checkGameOver.js"></script>
+<script  src="game.js"></script>
+<canvas id = "mycanvas" width="288" height="512"></canvas>
+<input id= "startpausegame" type="button" onclick=" game.gameStart()" value="Start Game"><br>
+<input id="replayGame" type="=button" onclick="game.replayGame()" value="Replay Game">
+<pre>Chu y: Chung ta se dieu khien chim bang cach click vao man hinh Canvas!
+Sau khi Start Game</pre>
+</body>
+</html>
