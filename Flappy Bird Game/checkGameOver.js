@@ -17,7 +17,7 @@ function checkGameOver(game) {
                 console.log("gameover is loaded");
             };
             self.gameOverImage.src = 'gameover.png';
-            if (self.loaded = true)
+            if (self.loaded == true)
                 this.game.context.drawImage(self.gameOverImage, 50, 230);
         }
     };

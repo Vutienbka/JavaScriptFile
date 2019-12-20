@@ -1,5 +1,5 @@
 // Khai bao doi tuong bird
-let bird= function (game) {
+let Bird= function (game) {
     this.game = game; // de co the lay cac tham so cua game nhu width, height...
     this.birdImages = [];
     this.midFlapImage = false; // check midFlapImage loaded or not

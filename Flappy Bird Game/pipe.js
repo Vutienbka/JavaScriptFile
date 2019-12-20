@@ -11,6 +11,8 @@ let Pipe= function (game) {
     this.Y=0;
     this.X=0;
     this.countScore= 0;
+    this.scorePosX=10;
+    this.scorePosY= 20;
     // khoi tao chieu cao
     this._pipe[0] = {
         pX : this.game.canvas.width,
@@ -103,7 +105,7 @@ let Pipe= function (game) {
     {
         this.game.context.font= "20px black";
         console.log("Score is:" + this.countScore);
-        this.game.context.fillText("Score: " +  self.score[self.score.length-1].realScore, 10,20);
+        this.game.context.fillText("Score: " +  self.score[self.score.length-1].realScore, self.scorePosX,self.scorePosY);
     };
 
 

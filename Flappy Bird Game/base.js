@@ -1,8 +1,7 @@
 // va background
 
-let base= function (game) {
+let Base= function (game) {
     this.game= game; // de truy xuat context trong frame "game"
-    this.image= null;
     this.loaded= false;
     this.baseX =0;
     this.baseWidth = 336;
@@ -39,4 +38,6 @@ let base= function (game) {
         self.game.context.drawImage(this.image,this.baseX, this.game.height - this.baseHeight);
         self.game.context.drawImage(this.image,this.baseX + this.game.width, this.game.height - this.baseHeight);
     };
+
+
 };

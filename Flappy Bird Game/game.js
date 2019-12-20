@@ -4,16 +4,10 @@ let Game =function () {
     this.context = null;
     this.width= 288;
     this.height= 512;
-
-    this.bird= null;// ban dau chua co doi tuong con chim
-    this.bg= null; // tao mot doi tuong background
-    this.bs= null; // tao base tren frame
-    this.pipe= null; // thao pipe tren frame
     this.checkGame = null;
     this.gameOver= true;
     this.click = false;
     let self= this;
-
 
     // start Game
     this.gameStart= function () {
@@ -36,7 +30,7 @@ let Game =function () {
 
     this.init=function(){
         self.canvas= document.createElement('canvas');
-        self.context= this.canvas.getContext('2d');
+        self.context= self.canvas.getContext('2d');
         document.body.appendChild(this.canvas);
         self.canvas.width= this.width;// dat chieu rong canvas
         self.canvas.height= this.height; // dat chieu cao canvas
@@ -45,7 +39,7 @@ let Game =function () {
         this.bg.init();
 
         // khoi tao base tren frame
-        this.bs= new base(this);
+        this.bs= new Base(this);
         this.bs.init();
 
         // khoi tao  pipe tren frame
@@ -54,25 +48,25 @@ let Game =function () {
 
 
         // khoi tao mot tuong bird trong frame
-        this.bird= new bird(this);
+        this.bird= new Bird(this);
         this.bird.init();
         // khoi tao doi tuong de check trang thai game
         this.checkGame = new checkGameOver(this);
 
-        self.listenMouse();
-        self.loop();
+        self.mouseListener();
+        self.repeatFrame();
 
     };
 // tao vong lap vo han
-    this.loop= function () {
+    this.repeatFrame= function () {
         //console.log('loop');
         self.update();
         self.draw();
-        setTimeout(self.loop, 33);
+        setTimeout(self.repeatFrame, 33);
     };
 
     // tao su kien click chuot vao canvas
-    this.listenMouse= function () {
+    this.mouseListener= function () {
         let audio = new Audio("fly-sound.mp3");
         this.canvas.addEventListener('click',function (){
             self.bird.direction='up';
