@@ -6,6 +6,7 @@ let bg= function (game) {
     this.backgroundImage[1]=null;
     this.loaded= false;
     this.x =0;
+    this.STEP=1;
     let self= this;
 
     this.init= function(){
@@ -33,8 +34,8 @@ let bg= function (game) {
         //console.log('Update background');
         if(this.game.gameOver)
             return;
-        self.x--;
-        if(self.x== -288)
+        self.x-=this.STEP;
+        if(self.x== -self.game.width)
             self.x= 0;
     };
     // ve lai background moi khi update

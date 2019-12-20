@@ -8,11 +8,12 @@ let Pipe= function (game) {
     this.score = [];
     this.pHeight= 320; // chieu cao cua pipe
     this.pWidth = 52;
-    this.Y=0;
+    //this.Y=0;
     this.X=0;
     this.countScore= 0;
     this.scorePosX=10;
     this.scorePosY= 20;
+    this.STEP=2;
     // khoi tao chieu cao
     this._pipe[0] = {
         pX : this.game.canvas.width,
@@ -54,7 +55,7 @@ let Pipe= function (game) {
         if(this.game.gameOver)
             return;
         for(let i= 0; i< this._pipe.length; i++) {
-            self._pipe[i].pX -=2;
+            self._pipe[i].pX -=self.STEP;
             if (self._pipe[i].pX == 50) {
                 self._pipe.push({
                     pX: this.game.canvas.width,
